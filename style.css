@@ -1,0 +1,255 @@
+/* استايل الصفحة العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-image: url('https://cdn.infra.luxota.cloud/files/20240630/249a5123473fc7170f59/file.png'); /* استبدل بمسار الخلفية الخاص بك */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('stars.png'); /* استبدل بـ مسار صورة النجوم */
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 0;
+    animation: twinkling 20s infinite;
+}
+
+/* الحاوية الرئيسية بشكل مستطيل */
+.container {
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 25px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    position: relative;
+    padding: 40px 30px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* تنسيق الشعار */
+.logo img {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+/* الزر الأولي */
+.option-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.option-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: right 0.3s;
+}
+
+.option-btn:hover::after {
+    right: 100%;
+}
+
+.option-btn:hover {
+    background: linear-gradient(45deg, #ff5722, #e64a19);
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* تنسيق الأزرار مع الأيقونات */
+.option-btn i,
+.login-btn i {
+    margin-left: 10px; /* استخدم margin-left لأن اتجاه النص من اليمين إلى اليسار */
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+/* إخفاء الحاويات المخفية */
+.hidden {
+    display: none;
+}
+
+/* تنسيق حقول الإدخال */
+.input-box {
+    margin-bottom: 20px;
+    text-align: right;
+    position: relative;
+    animation: fadeInUp 1s ease;
+}
+
+.input-box label {
+    font-size: 1rem;
+    color: #ff9800;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+}
+
+.input-box input:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
+}
+
+/* زر تسجيل الدخول وزر العودة */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #8e24aa, #5e35b1);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: right 0.3s;
+}
+
+.login-btn:hover::after {
+    right: 100%;
+}
+
+.login-btn:hover {
+    background: linear-gradient(45deg, #7b1fae, #4527a0);
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* الروابط الإضافية */
+.extra-links {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    animation: fadeInUp 1s ease;
+}
+
+.extra-links a {
+    color: #ff9800;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.extra-links a:hover {
+    color: #ff5722;
+}
+
+/* تنسيق العد التنازلي */
+.countdown-timer {
+    font-size: 1rem;
+    color: #ff9800;
+    margin-top: 20px;
+}
+
+/* تنسيق رسالة انتهاء الباقة */
+.message {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* حركات للنصوص */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes twinkling {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
